@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Examples:
+
+# 0. export API_KEY=api_key_string
+
+# 1. Cache status for domain cachoid.com
+# sh curl_api.sh $API_KEY cachoid.com
+
+# 2. Cache status for domain cachoid.com and subpage /support
+# sh curl_api.sh $API_KEY cachoid.com support
+
 urlencode() {
     # urlencode <string>
     old_lc_collate=$LC_COLLATE
@@ -24,7 +34,7 @@ urldecode() {
     printf '%b' "${url_encoded//%/\\x}"
 }
 
-# set -x;
+set -x;
 
 if [ ${#} -lt '2' ];
 then
