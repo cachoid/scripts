@@ -13,5 +13,5 @@ if [ ${#} -lt '3' ];
 then
 	echo "$0 <file.vcl> <token> <fqdn>";
 else
-	curl -F file=@$1 -XPOST -vvv -H "Accept: application/vnd.YOUR_SUBTYPE.v1+json" -H "Authorization: Bearer $2" http://api.cachoid.com/vcl/upload/$3
+	curl -F file=@$1 -XPOST -vvv -H "Accept: application/vnd.cachoid.v1+json" -H "Authorization: Bearer $2" http://api.cachoid.com/vcl/upload/$3
 fi
